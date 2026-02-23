@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rash Vests</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        a.home-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            text-decoration: none;
+            color: #1d3557;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        a.home-link:hover {
+            text-decoration: underline;
+            color: #457b9d;
+        }
+
+        .products-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .product-container {
+            display: flex;
+            gap: 40px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 900px;
+            width: 100%;
+            /* ADD THIS */
+            margin: 0 auto;
+            /* cleaner than just auto */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            min-height: 250px;
+            box-sizing: border-box;
+            /* VERY important */
+        }
+
+        .product-container.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .product-image {
+            width: 300px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 24px;
+            color: #e63946;
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        button {
+            background-color: #1d3557;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #457b9d;
+        }
+
+        .placeholder {
+            color: #aaa;
+            font-style: italic;
+            align-self: center;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        /* Header Bar */
+        .site-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-left,
+        .header-center,
+        .header-right {
+            flex: 1;
+        }
+
+        .header-center {
+            text-align: center;
+        }
+
+        .header-right {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            font-size: 18px;
+        }
+
+        /* Logo */
+        .header-center img {
+            max-height: 60px;
+            width: auto;
+        }
+
+        /* Back Link */
+        .home-link {
+            text-decoration: none;
+            color: #1d3557;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .home-link:hover {
+            color: #457b9d;
+        }
+
+        /* Header Icons */
+        .header-icon {
+            cursor: pointer;
+        }
+
+        .header-icon:hover {
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+
+    .product-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .product-container.reverse {
+        flex-direction: column;
+    }
+
+    .product-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-details {
+        width: 100%;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+    <!-- Header Image -->
+    <header class="site-header">
+
+        <!-- Left -->
+        <div class="header-left">
+            <a class="home-link" href="../index.html">&larr; Back to Home</a>
+        </div>
+
+        <!-- Center -->
+        <div class="header-center">
+            <img src="../images/Redback_surf_1.png" alt="Redback Surf">
+        </div>
+
+        <!-- Right -->
+        <div class="header-right">
+            <span class="header-icon">🔍</span>
+            <span class="header-icon">👤</span>
+            <span class="header-icon">🛒</span>
+        </div>
+
+    </header>
+    <div class="products-wrapper">
+
+        <!-- Existing Product 1 -->
+        <div class="product-container">
+            <div class="product-image">
+                <img src="../images/Black_rashies_1.png" alt="Black Rash Vest">
+            </div>
+            <div class="product-details">
+                <div class="product-title">Black Rash Vest</div>
+                <div class="product-price">$39.95</div>
+                <div class="product-description">
+                    Stay protected and stylish in our sleek Black Rash Vest.
+                </div>
+                <label>Size</label>
+                <select>
+                    <option>XS</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Existing Product 2 -->
+        <div class="product-container reverse">
+            <div class="product-image">
+                <img src="../images/Vivid_rashies_1.png" alt="Vivid High Vis Rash Vest">
+            </div>
+            <div class="product-details">
+                <div class="product-title">Vivid High Vis Rash Vest</div>
+                <div class="product-price">$39.95</div>
+                <div class="product-description">
+                    Stay protected and seen in our sleek Vivid High Vis Rash Vest.
+                </div>
+                <label>Size</label>
+                <select>
+                    <option>XS</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- 8 Blank Product Containers -->
+
+        <div class="product-container">
+            <div class="placeholder">Product slot 3</div>
+        </div>
+        <div class="product-container reverse">
+            <div class="placeholder">Product slot 4</div>
+        </div>
+        <div class="product-container">
+            <div class="placeholder">Product slot 5</div>
+        </div>
+        <div class="product-container reverse">
+            <div class="placeholder">Product slot 6</div>
+        </div>
+        <div class="product-container">
+            <div class="placeholder">Product slot 7</div>
+        </div>
+        <div class="product-container reverse">
+            <div class="placeholder">Product slot 8</div>
+        </div>
+        <div class="product-container">
+            <div class="placeholder">Product slot 9</div>
+        </div>
+        <div class="product-container reverse">
+            <div class="placeholder">Product slot 10</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

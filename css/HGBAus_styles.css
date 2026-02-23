@@ -31,11 +31,7 @@ header {
   align-items: center;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
+
 
 nav {
   display: flex;
@@ -84,30 +80,46 @@ nav a:hover {
 .brand-menu-wrapper {
   position: relative;
   display: inline-flex;
-  align-items: center;
+  flex-direction: column;   /* important */
 }
+
+.brand-menu-wrapper:hover .brand-menu {
+  opacity: 1;
+  max-height: 500px; /* big enough to fit content */
+  padding: 16px 24px;
+}
+
+/* .brand-menu {
+  transform: translateY(5px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+} */
+
+/* .brand-menu-wrapper:hover .brand-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+} */
 
 #brandButton {
     cursor: pointer;
 }
 .brand-menu {
-  position: absolute;
-  top: 50%;
-  left: 0; /* align with left edge of wrapper */
-  transform: translateX(30%) translateY(-50%);
-  display: flex;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 12px 30px;
+
+   margin-top: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
   opacity: 0;
-  pointer-events: none;
-  white-space: nowrap;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.6
-  ); /* optional, makes menu visible on hero image */
-  padding: 10px 20px; /* optional for spacing */
-  border-radius: 6px; /* optional polish */
+  max-height: 0;
+  overflow: hidden;
+
+  background: rgba(0, 0, 0, 0.85);
+  padding: 0 24px;   /* remove vertical padding for animation */
+  border-radius: 8px;
+
+  transition: opacity 0.2s ease, max-height 0.25s ease;
 }
 .brand-menu a {
   text-decoration: none;
@@ -125,6 +137,49 @@ nav a:hover {
 .brand-menu img {
     height: 20px;
     object-fit: contain;
+}
+
+@media (max-width: 768px) {
+
+  .header-inner {
+    padding: 16px 20px;
+  }
+  nav {
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+    padding-right: 10px;
+  }
+
+  .logo {
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .logo span {
+    display: block;
+  }
+
+  .logo-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .roo {
+    width: 24px;
+    height: 24px;
+  }
+
+}
+
+  .brand-menu {
+    grid-template-columns: 1fr;  /* single column */
+    width: 200px;
+  }
+
 }
 
 .hero h1 {
@@ -259,6 +314,10 @@ footer {
   display: flex;
   align-items: center;
   gap: 8px;
+
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .logo-icon {
@@ -266,6 +325,8 @@ footer {
   width: 30px;
   height: 30px;
 }
+
+
 
 .roo {
   position: absolute;
